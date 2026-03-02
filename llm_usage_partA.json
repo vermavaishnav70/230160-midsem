@@ -1,0 +1,153 @@
+
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part A",
+    "submission_date": "2026-03-02"
+  },
+
+  "llm_tools_used": [
+    {
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic"
+    }
+  ],
+
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Finding available papers not already selected by other students",
+      "prompt": "I cant select from the selected ones. suggest 5 research papers i can work as per provided pdf and rank them by difficulty and mention method and specifics for the papers",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Claude suggested unselected papers ranked by difficulty, which helped me identify suitable candidates that were not already taken by other students.",
+      "student_verification": "I cross-checked the live response sheet and confirmed the paper was not selected by any other student.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Verify whether One-Sided SVR paper satisfies all Part A guidelines",
+      "prompt": "is one side vector valid check for every thing",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Claude performed a complete 13-point eligibility check confirming ICML 2010 is CORE A*, method is 100% SVM variant, paper is not in the taken list, and experiments are CPU reproducible on UCI datasets.",
+      "student_verification": "I manually verified the ICML 2010 proceedings page and confirmed the paper title, authors, and venue before selecting.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Understanding what the paper does and how it extends standard SVM",
+      "prompt": "What does One-Sided Support Vector Regression for Multiclass Cost-Sensitive Classification do and how does it extend standard SVM?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Clarified that the paper modifies the standard SVM hinge loss to incorporate asymmetric misclassification costs, making predictions cost-aware rather than accuracy-only. This confirmed the paper is a direct SVM variant.",
+      "student_verification": "Verified by reading the abstract and Section 2 of the paper where the authors explicitly derive the modified loss function from standard one-versus-all SVM.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 4,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Understanding failure cases and limitations for Part C preparation",
+      "prompt": "What are the failure cases and limitations of One-Sided SVR cost-sensitive SVM I should know for the exam?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Identified key failure cases: (1) wrong cost matrix leads to biased predictions, (2) highly imbalanced costs can cause model to always predict the cheapest class, (3) cost matrix must be defined manually and is domain-dependent.",
+      "student_verification": "Verified against the experimental section of the paper where performance degrades with extreme cost ratios.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 5,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Understanding the prediction/inference procedure for Part B and C",
+      "prompt": "How does inference work in One-Sided SVR cost-sensitive classification step by step?",
+      "llm_response_used": "Partially",
+      "how_it_helped": "Explained that inference works by: training one SVM per class with asymmetric cost weights, then predicting the class that minimizes expected cost rather than maximizes margin. Same computational cost as standard SVM at test time.",
+      "student_verification": "Verified against Section 3 of the paper where the prediction rule is explicitly stated.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 6,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Checking reproducibility feasibility on a standard laptop",
+      "prompt": "Can One-Sided SVR cost-sensitive SVM be reproduced on a CPU-only laptop using scikit-learn for the exam?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Confirmed that the method is implementable using scikit-learn SVC with class_weight parameter on UCI datasets like Iris, Wine, or Glass — all used in the original paper — with no GPU required.",
+      "student_verification": "Checked that UCI Iris and Wine datasets are publicly available and confirmed scikit-learn supports cost-sensitive SVM via class_weight.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 7,
+      "date": "2026-03-02",
+      "tool_name": "Claude",
+      "model": "Claude Sonnet",
+      "provider": "Anthropic",
+      "purpose": "Getting the official publisher link for the paper",
+      "prompt": "official publisher link for One-Sided Support Vector Regression for Multiclass Cost-Sensitive Classification ICML 2010",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Provided the official ICML proceedings PDF link https://icml.cc/Conferences/2010/papers/207.pdf confirming it is a formally published ICML paper and not arXiv-only.",
+      "student_verification": "Visited the ICML link and confirmed it matches the correct paper title, authors, year, and conference.",
+      "confidence_level": 5
+    }
+  ],
+
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 5,
+      "prompt": "How does inference work in One-Sided SVR cost-sensitive classification step by step?",
+      "why_important": "Understanding the inference procedure is critical for Part B and C. This prompt clarified exactly how predictions are made at test time — minimizing expected cost rather than maximizing margin — which I will need to explain and implement without any tools."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 4,
+      "prompt": "What are the failure cases and limitations of One-Sided SVR cost-sensitive SVM I should know for the exam?",
+      "why_important": "Part C will test failure case reasoning without internet access. This prompt helped me identify the three most important failure modes: wrong cost matrix, extreme cost imbalance, and domain-dependence of cost specification. I verified all three against the paper's experimental section."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "What does One-Sided Support Vector Regression for Multiclass Cost-Sensitive Classification do and how does it extend standard SVM?",
+      "why_important": "This was essential for confirming the paper qualifies as an SVM variant under the exam rules and for understanding the core contribution deeply enough to explain it in Part C without tools."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 2,
+      "prompt": "is one side vector valid check for every thing",
+      "why_important": "Before committing to this paper I needed a complete eligibility check across all 13 exam rules. This prompt confirmed zero risk on every rule — venue, year, method, reproducibility, and taken list — removing all uncertainty before resubmission."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 6,
+      "prompt": "Can One-Sided SVR cost-sensitive SVM be reproduced on a CPU-only laptop using scikit-learn for the exam?",
+      "why_important": "Reproducibility is my direct responsibility per the exam rules. This prompt confirmed I can use scikit-learn on UCI datasets already used in the paper, making Part B implementation straightforward and low-risk."
+    }
+  ],
+
+  "student declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part A.",
+    "understanding acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-02"
+  }
+}
