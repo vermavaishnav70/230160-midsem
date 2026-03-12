@@ -1,0 +1,66 @@
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination Part B",
+    "task": "Task 1.1 — Core Contribution / Architecture"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "GitHub Copilot (Claude)",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic via GitHub Copilot"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 1.1",
+      "purpose": "Understanding the step-by-step method of OSSVR from the paper for writing the core contribution description",
+      "prompt": "Based on the OSSVR paper (Tu & Lin, ICML 2010), describe the method as a sequence of steps from input to final output, referencing specific equations and sections.",
+      "llm_response_used": "Partially",
+      "code_used_verbatim": false,
+      "how_it_helped": "Helped structure the 5-step description (cost vector construction, regret transformation, one-sided loss, OVA decomposition, argmin prediction). I rewrote each step in my own words and verified against the paper.",
+      "student_verification": "Cross-checked each step against Sections 2-3 of the paper and confirmed equation references.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 1.1",
+      "purpose": "Clarifying the difference between one-sided and two-sided epsilon-insensitive loss",
+      "prompt": "What is the difference between one-sided and two-sided epsilon-insensitive loss in SVR, and why does the OSSVR paper use one-sided?",
+      "llm_response_used": "Partially",
+      "code_used_verbatim": false,
+      "how_it_helped": "Clarified that two-sided penalises both directions while one-sided only penalises under-prediction. This helped me write the Step 3 description accurately.",
+      "student_verification": "Verified against Equation (5)-(6) and Figure 1 in the paper.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "Based on the OSSVR paper (Tu & Lin, ICML 2010), describe the method as a sequence of steps from input to final output, referencing specific equations and sections.",
+      "why_important": "This was the primary prompt for structuring my Task 1.1 answer. It helped me organise the method into a clear 5-step sequence that I then verified and rewrote in my own words."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "What is the difference between one-sided and two-sided epsilon-insensitive loss in SVR, and why does the OSSVR paper use one-sided?",
+      "why_important": "Understanding the one-sided loss is central to the paper's contribution. This prompt helped me articulate why over-prediction is harmless in the cost-sensitive setting."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.1.",
+    "understanding_acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-12"
+  }
+}

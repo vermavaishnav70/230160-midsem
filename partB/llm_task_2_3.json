@@ -1,0 +1,68 @@
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination Part B",
+    "task": "Task 2.3 — Result, Comparison and Reproducibility"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "GitHub Copilot (Claude)",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic via GitHub Copilot"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.3",
+      "purpose": "Creating visualisations for result comparison",
+      "prompt": "Create a figure with cost-weighted confusion matrices and a bar chart comparing OSSVR, CS-OVA, and standard SVM on average misclassification cost.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "Adjusted figure size, colour scheme, and label formatting. Changed the heatmap to use cost-weighted counts (cm * cost_matrix) instead of raw counts.",
+      "how_it_helped": "Generated the matplotlib/seaborn plotting code for the comparison figure.",
+      "student_verification": "Verified that the cost-weighted confusion matrix correctly multiplies counts by costs.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.3",
+      "purpose": "Implementing CS-OVA SVM baseline using sklearn",
+      "prompt": "Implement cost-sensitive OVA SVM using sklearn's SVC with class_weight parameter derived from a cost matrix.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "Modified the class_weight derivation to use mean cost of misclassifying each true class (average of off-diagonal entries per row) instead of a simpler scheme.",
+      "how_it_helped": "Provided the sklearn SVC setup with class_weight for cost-sensitive classification.",
+      "student_verification": "Verified that class_weight maps correctly from the cost matrix.",
+      "confidence_level": 4
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "Create a figure with cost-weighted confusion matrices and a bar chart comparing OSSVR, CS-OVA, and standard SVM on average misclassification cost.",
+      "why_important": "The visualisation is a required deliverable. This prompt generated the plotting framework which I then customised."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "Implement cost-sensitive OVA SVM using sklearn's SVC with class_weight parameter derived from a cost matrix.",
+      "why_important": "CS-OVA is the paper's main baseline. Having a correct implementation was essential for a meaningful comparison."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.3.",
+    "understanding_acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-12"
+  }
+}

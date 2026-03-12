@@ -1,0 +1,47 @@
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination Part B",
+    "task": "Task 4.2 — LLM Usage Disclosure"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "GitHub Copilot (Claude)",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic via GitHub Copilot"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 4.2",
+      "purpose": "Generating LLM disclosure JSON file templates with required fields",
+      "prompt": "Create LLM usage disclosure JSON files for Part B with the required fields: task_tag, code_used_verbatim, student_modification, and top_5_prompts section.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "Used the template structure but filled in all interaction details, prompts, and declarations with my actual usage. Each file's content reflects genuine interactions.",
+      "how_it_helped": "Generated the JSON structure template with all required fields.",
+      "student_verification": "Verified all required fields are present in each file as per the exam specification.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "Create LLM usage disclosure JSON files for Part B with the required fields: task_tag, code_used_verbatim, student_modification, and top_5_prompts section.",
+      "why_important": "Ensured all 10 JSON files have the correct structure with all mandatory fields to avoid losing marks on formatting."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 4.2.",
+    "understanding_acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-12"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination Part B",
+    "task": "Task 1.2 — Key Assumptions"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "GitHub Copilot (Claude)",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic via GitHub Copilot"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 1.2",
+      "purpose": "Identifying paper-specific assumptions of the OSSVR method",
+      "prompt": "What are the key assumptions specific to the OSSVR method in the Tu & Lin ICML 2010 paper, beyond general ML assumptions like i.i.d. data?",
+      "llm_response_used": "Partially",
+      "code_used_verbatim": false,
+      "how_it_helped": "Suggested several candidate assumptions. I selected three that are traceable to specific paper sections: fixed cost matrix, kernel smoothness of regret, and OVA decomposition sufficiency.",
+      "student_verification": "Traced each assumption to specific sections and equations in the paper.",
+      "confidence_level": 4
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "What are the key assumptions specific to the OSSVR method in the Tu & Lin ICML 2010 paper, beyond general ML assumptions like i.i.d. data?",
+      "why_important": "This was the only prompt for this task. It helped me generate candidate assumptions which I then filtered and refined based on my reading of the paper, keeping only those traceable to specific sections."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.2.",
+    "understanding_acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-12"
+  }
+}

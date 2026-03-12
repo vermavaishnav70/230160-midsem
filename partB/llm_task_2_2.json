@@ -1,0 +1,110 @@
+{
+  "student_metadata": {
+    "name": "Vaishnav Verma",
+    "roll_number": "230160",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination Part B",
+    "task": "Task 2.2 — Reproduction of Core Contribution"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "GitHub Copilot (Claude)",
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic via GitHub Copilot"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.2",
+      "purpose": "Implementing the OSSVR algorithm from the paper's equations",
+      "prompt": "Implement One-Sided SVR from Tu & Lin ICML 2010. The loss is max(0, r - f) (only penalise under-prediction). Use RBF kernel and scipy.optimize.minimize with L-BFGS-B.",
+      "llm_response_used": "Partially",
+      "code_used_verbatim": true,
+      "student_modification": "The LLM generated the OneSidedSVR class structure. I verified the objective function matches Eq. (5) of the paper and the gradient is correct. I added the gamma computation logic and adjusted the initialisation to use mean(r) instead of zeros.",
+      "how_it_helped": "Provided the implementation skeleton for the one-sided SVR class with objective, gradient, and predict methods.",
+      "student_verification": "Manually verified the objective function: reg = 0.5 * alpha^T K alpha matches the RKHS norm, and loss = sum max(0, r-f) matches the one-sided loss in Eq. (5). Checked gradient by numerical differentiation on a small example.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.2",
+      "purpose": "Computing regret vectors from the cost matrix",
+      "prompt": "How do I compute regret vectors from a cost matrix for OSSVR? The paper defines r_n[k] = C[y_n, k] - C[y_n, y_n].",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "The code was a simple numpy advanced indexing operation (cost_matrix[y]). I verified it produces the correct regret vectors by checking a few examples manually.",
+      "how_it_helped": "Confirmed the vectorised implementation of regret vector computation.",
+      "student_verification": "Manually computed regret for first 3 training examples and confirmed they match the code output.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.2",
+      "purpose": "Implementing the argmin prediction rule",
+      "prompt": "Implement the OSSVR prediction rule: predict the class with the minimum predicted regret across K regressors.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "Code was straightforward (np.column_stack + np.argmin). No modification needed.",
+      "how_it_helped": "Provided clean vectorised prediction code.",
+      "student_verification": "Verified against Section 3 prediction rule.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "date": "2026-03-12",
+      "tool_name": "GitHub Copilot",
+      "model": "Claude Opus 4.6",
+      "task_tag": "Task 2.2",
+      "purpose": "Computing average misclassification cost metric",
+      "prompt": "Implement average misclassification cost metric: (1/N) * sum C[y_true, y_pred].",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": true,
+      "student_modification": "Single line function, no modification needed.",
+      "how_it_helped": "Quick implementation of the evaluation metric.",
+      "student_verification": "Verified formula matches the paper's definition in Section 2.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 1,
+      "prompt": "Implement One-Sided SVR from Tu & Lin ICML 2010. The loss is max(0, r - f) (only penalise under-prediction). Use RBF kernel and scipy.optimize.minimize with L-BFGS-B.",
+      "why_important": "This was the most critical prompt — it generated the core OSSVR implementation. I verified every line against the paper's equations before using it."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 2,
+      "prompt": "How do I compute regret vectors from a cost matrix for OSSVR? The paper defines r_n[k] = C[y_n, k] - C[y_n, y_n].",
+      "why_important": "The regret transformation is the foundation of OSSVR. Getting this right was essential for the entire reproduction."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 3,
+      "prompt": "Implement the OSSVR prediction rule: predict the class with the minimum predicted regret across K regressors.",
+      "why_important": "The argmin prediction rule is how OSSVR converts regression outputs to class labels."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 4,
+      "prompt": "Implement average misclassification cost metric: (1/N) * sum C[y_true, y_pred].",
+      "why_important": "Using the correct evaluation metric is essential for a valid reproduction."
+    }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.2.",
+    "understanding_acknowledged": true,
+    "signature": "Vaishnav Verma",
+    "date": "2026-03-12"
+  }
+}
